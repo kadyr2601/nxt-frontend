@@ -1,19 +1,12 @@
-import Image from "next/image"
+import {Container} from "@/components/ui/container";
 
 export default function Footer() {
     return (
         <footer className="bg-[#272424] text-white py-12">
-            <div className="container mx-auto">
+            <Container>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto">
                     <div>
                         <div className="flex items-center gap-2 mb-4">
-                            <Image
-                                src="/placeholder.svg?height=40&width=40"
-                                alt="Restore Elite Logo"
-                                width={40}
-                                height={40}
-                                className="h-10 w-10 bg-white rounded-md"
-                            />
                             <span className="text-xl font-bold">NXT</span>
                         </div>
                         <p className="text-white/70 mb-4">
@@ -114,7 +107,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="text-center mt-8">&copy; {new Date().getFullYear()} NXT. All rights reserved.</div>
-            </div>
+            </Container>
         </footer>
     )
 }

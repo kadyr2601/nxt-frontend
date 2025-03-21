@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import {Container} from "@/components/ui/container";
 
 export default function TestimonialsSection() {
     const testimonials = [
@@ -24,7 +25,7 @@ export default function TestimonialsSection() {
 
     return (
         <section id="testimonials" className="py-16 bg-[#272424] text-white">
-            <div className="container max-w-[1600px] mx-auto">
+            <Container>
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
                     <p className="text-white/70 max-w-2xl mx-auto">
@@ -71,7 +72,7 @@ export default function TestimonialsSection() {
                         </Card>
                     ))}
                 </div>
-            </div>
+            </Container>
         </section>
     )
 }
