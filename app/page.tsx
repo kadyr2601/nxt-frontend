@@ -10,22 +10,72 @@ import GallerySection from "@/components/gallery-section";
 import WhyUsSection from "@/components/why-us";
 
 
-export default function LandingPage() {
+async function getHomePage() {
+
+    const res = await fetch(`${process.env.API_URL}/api/v1/homepage`);
+    if (!res.ok) return null;
+    return await res.json()
+}
+
+export const metadata = {
+    title: "NXT - Next Experience Transformation",
+};
+
+export default async function LandingPage() {
+
+    const homePage = await getHomePage();
+
     return (
         <div className="flex min-h-screen flex-col">
             <div className="mx-auto w-full">
                 <Header />
                 <main className="flex-1">
-                    <Hero />
-                    <OfferBanner />
-                    <WhyUsSection />
-                    <ServicesSection />
-                    <ProjectsSection />
-                    <GallerySection />
-                    <TestimonialsSection />
-                    <ContactSection />
+                    <Hero
+                        main_banner_image={process.env.API_URL + homePage.main_banner_image}
+                        exclusive_offers={homePage.exclusive_offers}
+                    />
+                    <OfferBanner offerText={homePage.exclusive_offer_banner_title}/>
+                    <WhyUsSection
+                        image={process.env.API_URL + homePage.why_choose_us_image}
+                        description={homePage.why_choose_us_description}
+                        reasons={homePage.advantages}
+                    />
+                    <ServicesSection
+                        title={homePage.services_title}
+                        description={homePage.services_description}
+                        services={homePage.services}
+                    />
+                    <ProjectsSection
+                        title={homePage.projects_title}
+                        description={homePage.projects_description}
+                        projects={homePage.projects}
+                    />
+                    <GallerySection
+                        title={homePage.gallery_title}
+                        description={homePage.gallery_description}
+                        galleryImages={homePage.gallery}
+                    />
+                    <TestimonialsSection
+                        title={homePage.testimonials_title}
+                        description={homePage.testimonials_description}
+                        testimonials={homePage.testimonials}
+                    />
+                    <ContactSection
+                        title={homePage.contacts_title}
+                        description={homePage.contacts_description}
+                        phone={homePage.contacts_phone}
+                        email={homePage.contacts_email}
+                        workingHours={homePage.contacts_working_hours}
+                        address={homePage.contacts_address}
+                        services={homePage.contact_services}
+                    />
                 </main>
-                <Footer />
+                <Footer
+                    address={homePage.contacts_address}
+                    phone={homePage.contacts_phone}
+                    email={homePage.contacts_email}
+                    services={homePage.contact_services}
+                />
             </div>
         </div>
     )

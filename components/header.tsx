@@ -36,26 +36,12 @@ export default function Header() {
                     </Link>
                 </nav>
                 <div className="flex items-center gap-4">
-                    <Button className="lg:flex bg-[#272424] hover:bg-[#272424]/90">Get a Quote</Button>
-                    {/*<Button className="lg:hidden" variant="outline" size="icon">*/}
-                    {/*    <svg*/}
-                    {/*        xmlns="http://www.w3.org/2000/svg"*/}
-                    {/*        width="24"*/}
-                    {/*        height="24"*/}
-                    {/*        viewBox="0 0 24 24"*/}
-                    {/*        fill="none"*/}
-                    {/*        stroke="currentColor"*/}
-                    {/*        strokeWidth="2"*/}
-                    {/*        strokeLinecap="round"*/}
-                    {/*        strokeLinejoin="round"*/}
-                    {/*        className="h-6 w-6"*/}
-                    {/*    >*/}
-                    {/*        <line x1="4" x2="20" y1="12" y2="12" />*/}
-                    {/*        <line x1="4" x2="20" y1="6" y2="6" />*/}
-                    {/*        <line x1="4" x2="20" y1="18" y2="18" />*/}
-                    {/*    </svg>*/}
-                    {/*    <span className="sr-only">Toggle menu</span>*/}
-                    {/*</Button>*/}
+                    <Link
+                        href="#contact"
+                        className="text-sm font-medium bg-[#272424] hover:bg-[#272424]/90 text-white py-2 px-4 rounded-md transition-colors"
+                    >
+                        Get a Quote
+                    </Link>
                 </div>
             </Container>
         </header>

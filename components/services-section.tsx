@@ -3,7 +3,20 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { CheckCircle } from "lucide-react"
 import {Container} from "@/components/ui/container";
 
-export default function ServicesSection() {
+interface ServicesPageProps {
+    title: string,
+    description: string,
+    services: {
+        title: string;
+        description: string;
+        attribute_one: string;
+        attribute_two: string;
+        attribute_three: string;
+    }[];
+}
+
+export default function ServicesSection({ title, description, services }: ServicesPageProps) {
+
     const serviceCards = [
         {
             title: "Painting & Finishing",
@@ -83,14 +96,12 @@ export default function ServicesSection() {
         <section id="services" className="py-12 sm:py-16 bg-white max-w-[1600px] mx-auto">
             <Container>
                 <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Comprehensive Services</h2>
-                    <p className="text-[#272424]/70 max-w-2xl mx-auto">
-                        From minor repairs to complete renovations, our expert team delivers exceptional results for every project.
-                    </p>
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4">{title}</h2>
+                    <p className="text-[#272424]/70 max-w-2xl mx-auto">{description}</p>
                 </div>
 
                 <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-6">
-                    {serviceCards.map((service, index) => (
+                    {services.map((service, index) => (
                         <Card key={index} className="border border-[#e8e8e8] shadow-sm hover:shadow-md transition-shadow">
                             <CardHeader>
                                 <CardTitle>{service.title}</CardTitle>
@@ -98,12 +109,24 @@ export default function ServicesSection() {
                             </CardHeader>
                             <CardContent>
                                 <ul className="space-y-2">
-                                    {service.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start gap-2">
-                                            <CheckCircle className="h-5 w-5 text-[#d3a971] shrink-0 mt-0.5" />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle className="h-5 w-5 text-[#d3a971] shrink-0 mt-0.5" />
+                                        <span>{service.attribute_one}</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle className="h-5 w-5 text-[#d3a971] shrink-0 mt-0.5" />
+                                        <span>{service.attribute_two}</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <CheckCircle className="h-5 w-5 text-[#d3a971] shrink-0 mt-0.5" />
+                                        <span>{service.attribute_three}</span>
+                                    </li>
+                                    {/*{service.features.map((feature, i) => (*/}
+                                    {/*    <li key={i} className="flex items-start gap-2">*/}
+                                    {/*        <CheckCircle className="h-5 w-5 text-[#d3a971] shrink-0 mt-0.5" />*/}
+                                    {/*        <span>{feature}</span>*/}
+                                    {/*    </li>*/}
+                                    {/*))}*/}
                                 </ul>
                             </CardContent>
                             <CardFooter>
