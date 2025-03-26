@@ -12,7 +12,7 @@ import WhyUsSection from "@/components/why-us";
 
 async function getHomePage() {
 
-    const res = await fetch(`${process.env.API_URL}/api/v1/homepage`);
+    const res = await fetch(`${process.env.API_URL}/api/v1/homepage`, {cache: 'no-store'});
     if (!res.ok) return null;
     return await res.json()
 }

@@ -1,6 +1,4 @@
 import Image from "next/image"
-import { Shield, PenToolIcon as Tool, Clock, HeartHandshake, Sparkles, Hammer } from "lucide-react"
-// import image from "../public/whyUs.jpg"
 import {Container} from "@/components/ui/container";
 
 interface WhyUsSectionProps {
@@ -15,44 +13,10 @@ interface WhyUsSectionProps {
 
 export default function WhyUsSection({ image, description, reasons }: WhyUsSectionProps) {
 
-    // const reasons = [
-    //     {
-    //         icon: <Shield className="h-6 w-6 text-[#d3a971]" />,
-    //         title: "Licensed & Insured",
-    //         description: "Fully licensed professionals with comprehensive insurance coverage for your protection.",
-    //     },
-    //     {
-    //         icon: <Tool className="h-6 w-6 text-[#d3a971]" />,
-    //         title: "Master Craftsmen",
-    //         description: "Skilled artisans with decades of experience in specialized restoration techniques.",
-    //     },
-    //     {
-    //         icon: <Clock className="h-6 w-6 text-[#d3a971]" />,
-    //         title: "Timely Completion",
-    //         description: "Strict adherence to project timelines with detailed scheduling and planning.",
-    //     },
-    //     {
-    //         icon: <HeartHandshake className="h-6 w-6 text-[#d3a971]" />,
-    //         title: "Client-Focused Approach",
-    //         description: "Your vision and satisfaction are our top priorities throughout the entire process.",
-    //     },
-    //     {
-    //         icon: <Sparkles className="h-6 w-6 text-[#d3a971]" />,
-    //         title: "Attention to Detail",
-    //         description: "Meticulous focus on the finest details that make your space truly exceptional.",
-    //     },
-    //     {
-    //         icon: <Hammer className="h-6 w-6 text-[#d3a971]" />,
-    //         title: "Quality Materials",
-    //         description: "We never compromise on materials, ensuring lasting beauty and durability.",
-    //     },
-    // ]
-
     return (
         <section className="py-16 bg-white">
             <Container>
                 <div className="flex flex-col lg:flex-row gap-12">
-                    {/* Left column - Image and headline */}
                     <div className="lg:w-5/12">
                         <div className="relative">
                             <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#d3a971]/10 rounded-lg z-0"></div>
@@ -91,25 +55,6 @@ export default function WhyUsSection({ image, description, reasons }: WhyUsSecti
                                     </div>
                                 </div>
                             ))}
-                        </div>
-
-                        <div className="mt-10 p-4 bg-[#e8e8e8]/50 rounded-lg border-l-4 border-[#d3a971]">
-                            <div className="flex items-center gap-4">
-                                <div className="flex -space-x-4">
-                                    {[1, 2, 3].map((i) => (
-                                        <div
-                                            key={i}
-                                            className="w-10 h-10 rounded-full bg-[#272424] flex items-center justify-center text-white text-xs font-bold ring-2 ring-white"
-                                        >
-                                            {String.fromCharCode(64 + i)}
-                                        </div>
-                                    ))}
-                                </div>
-                                <div>
-                                    <p className="font-semibold">Trusted by homeowners and businesses since 2008</p>
-                                    <p className="text-sm text-[#272424]/70">Over 50 successful projects and counting</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
