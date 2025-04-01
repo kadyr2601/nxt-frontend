@@ -19,6 +19,7 @@ async function getHomePage() {
 
 export const metadata = {
     title: "NXT - Next Experience Transformation",
+    description: "We offer full-scale turnkey renovation services for all types of properties — from apartments and houses to offices and commercial spaces. Our team handles every aspect of the project with precision and care, delivering high-quality results on time and within budget.",
 };
 
 export default async function LandingPage() {
